@@ -1,0 +1,8 @@
+﻿@model LoginViewModel
+
+<form action="Login" method="post">
+    <input type="hidden" asp-for="ReturnUrl"  />
+    <input type="text" asp-for="Login"  />
+    <input type="password" asp-for="Password"  />
+    <input type="submit" value="Вход"  />
+</form>
