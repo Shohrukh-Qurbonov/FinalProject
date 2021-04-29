@@ -1,0 +1,16 @@
+﻿@model RegisterViewModel
+
+    <div asp-validation-summary="All"></div>
+    <form action="Register" method="post">
+        <input type="text" asp-for="CompanyName" />
+        <span asp-validation-for="CompanyName"></span>
+        <input type="email" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+        <input type="text" asp-for="Login" />
+        <span asp-validation-for="Login"></span>
+        <input type="password" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+        <input type="text" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+        <input type="submit" value="Регистация" />
+    </form>

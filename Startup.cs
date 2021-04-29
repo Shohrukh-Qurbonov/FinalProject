@@ -34,6 +34,7 @@ namespace FinalProject
                 opt.Password.RequiredLength = 4;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireLowercase = false;
+                opt.Password.RequireNonAlphanumeric = false;
                 opt.User.RequireUniqueEmail = true;
                 //opt.User.AllowedUserNameCharacters += "йқукенгшҳзфыйцвыячсмтиюоэзщх";
             }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();

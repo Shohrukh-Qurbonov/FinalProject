@@ -16,7 +16,7 @@ namespace FinalProject.Seeds
             }
             if(!await roleManager.RoleExistsAsync("Company"))
             {
-                await roleManager.CreateAsync(new IdentityRole { Name = "Comapny" });
+                await roleManager.CreateAsync(new IdentityRole { Name = "Company" });
             }
         }
     }

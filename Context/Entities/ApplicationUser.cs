@@ -8,6 +8,7 @@ namespace FinalProject.Context.Entities
 {
     public class ApplicationUser : IdentityUser
     {
+        public string CompanyName { get; set; }
         public virtual ICollection<Home> Homes { get; set; }
     }
 }

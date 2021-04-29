@@ -4,14 +4,16 @@ using FinalProject.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210428161428_AddCompanyNameColumnToUsersTable")]
+    partial class AddCompanyNameColumnToUsersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,23 +102,6 @@ namespace FinalProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Новостройка"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Дача"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Офис"
-                        });
                 });
 
             modelBuilder.Entity("FinalProject.Context.Entities.City", b =>
@@ -131,19 +116,7 @@ namespace FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Худжанд"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Душанбе"
-                        });
+                    b.ToTable("City");
                 });
 
             modelBuilder.Entity("FinalProject.Context.Entities.CurrencyType", b =>
