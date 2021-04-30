@@ -15,6 +15,10 @@ namespace FinalProject.Context
         }
 
         public DbSet<City> Cities { get; set; }
+        public DbSet<Home> Homes { get; set; }
+        public DbSet<HomeImage> HomeImages { get; set; }
+        public DbSet<Request> Requests { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

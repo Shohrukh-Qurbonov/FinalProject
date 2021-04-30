@@ -1,8 +1,20 @@
-﻿@{
+﻿@model List<HomeViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@foreach(var home in Model)
+            {
+
+<div class="card">
+    <div class="card-header">
+        <img src="@home.ImagePath" alt="Alternate Text" />
+    </div>
+    <div class="card-body">
+        <p>Цена....@home.Price c.</p>
+        <p>Срок кредита....@home.CreditTerm</p>
+        <p>Адрес....@home.Price</p>
+        <p>Ежемесячно....@(home.Price/home.CreditTerm)</p>
+    </div>
 </div>
+            }

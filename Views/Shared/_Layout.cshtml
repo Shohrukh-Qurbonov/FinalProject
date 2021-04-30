@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FinalProject</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
 </head>
 <body>
     <header>
@@ -36,8 +36,87 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - FinalProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 contacts">
+                        <div class="contact-phone">
+                            <a href="tel:900" class="call-center">900</a>
+                        </div>
+                        <div class="phone-title">Телефон справочной службы</div>
+                        <div class="alif-address"><strong>Душанбе, ул. Фотех Ниёзи, 51</strong></div>
+                        <div class="alif-address"><strong>Худжанд, ул. Рахима Джалила, 2</strong></div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 apps">
+                        <div class="download-wallet"><strong>Мобильное приложение</strong></div>
+                        <div class="app-link">
+                            <a href="https://goo.gl/5oNT1V" target="_blank">
+                                <img width="126" height="36" src="~/media/app_store.svg" alt="App Store" />
+                            </a>
+
+                            <a href="https://goo.gl/5oNT1V" target="_blank">
+                                <img width="126" height="36" src="~/media/google_play.svg" alt="Google Play" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 social-media">
+                        <div>
+                            <div class="social-media-title"><strong>Соцмедиа</strong></div>
+                            <div class="social-media-icon">
+                                <a target="_blank" href="https://www.facebook.com/alifbank.tj">
+                                    <img src="~/media/facebook.svg" alt="facebook" />
+                                </a>
+
+                                <a target="_blank" href="https://www.instagram.com/alifbank.tj">
+                                    <img src="~/media/instagram.svg" alt="instagram" />
+                                </a>
+
+                                <a target="_blank" href="https://t.me/alifbank">
+                                    <img src="~/media/telegram.svg" alt="telegram" />
+                                </a>
+
+                                <a target="_blank" href="https://www.youtube.com/channel/UCIxsoNNcNriGiNziF_bVSzQ">
+                                    <img src="~/media/youtube.svg" alt="youtube" />
+                                </a>
+                                @{
+                                    var tiktokBaseUrl = "https://www.tiktok.com/@alifbank.tj";
+                                }
+                                <a target="_blank" href="@tiktokBaseUrl">
+                                    @*https://www.tiktok.com/@alifbank.tj*@
+                                    <img src="~/media/tiktok.svg" alt="tiktok" />
+                                </a>
+
+                                <a target="_blank" href="https://ok.ru/alifbank">
+                                    <img src="~/media/ok.svg" alt="ok.ru" />
+                                </a>
+
+                                <a target="_blank" href="https://www.linkedin.com/company/alif-capital">
+                                    <img src="~/media/in.svg" alt="linkedin" />
+                                </a>
+
+                                <a target="_blank" href="https://vk.com/alifbank">
+                                    <img src="~/media/vk.svg" alt="vk.com" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 bank-info">
+                        <div class="bank-name">
+                            <strong>© 2021 ОАО «Алиф Банк»</strong>
+                        </div>
+                        <div class="bank-license">
+                            Лицензия НБТ №0000114 <br /> от 3 января 2020 года
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
