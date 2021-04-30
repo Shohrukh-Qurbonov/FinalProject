@@ -33,7 +33,7 @@ namespace FinalProject.Controllers
 
             if(result.Succeeded)
             {
-                return Redirect(model.ReturnUrl ?? "/Admin/Index");
+                return Redirect(model.ReturnUrl ?? "/Home/Index");
             }
 
             return View(model);

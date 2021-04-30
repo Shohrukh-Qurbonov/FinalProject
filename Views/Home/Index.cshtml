@@ -8,13 +8,26 @@
 
 <div class="card">
     <div class="card-header">
+        @if (User.IsInRole("Admin") || User.IsInRole("Company"))
+        {
+            <a href="~/Home/Delete?id=@home.Id">Удалить</a>
+        }
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="~/Home/EditForAdmin?id=@home.Id">Изменить</a>
+        }
+        @if (User.IsInRole("Company"))
+        {
+            <a href="~/Home/Edit?id=@home.Id">Изменить</a>
+        }
         <img src="@home.ImagePath" alt="Alternate Text" />
     </div>
     <div class="card-body">
         <p>Цена....@home.Price c.</p>
         <p>Срок кредита....@home.CreditTerm</p>
         <p>Адрес....@home.Price</p>
-        <p>Ежемесячно....@(home.Price/home.CreditTerm)</p>
+        <p>Ежемесячно....@(Math.Round(home.Price/(home.CreditTerm*12),2))</p>
+        <a href="~/Request/Create?homeId=@home.Id">Оставить заявку</a>
     </div>
 </div>
             }

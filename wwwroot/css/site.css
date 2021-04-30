@@ -220,4 +220,39 @@ hr{
 }
 .footer .bank-info .bank-license br {
   display: none;
-} 
+}
+
+@media (max-width:767px) {
+    .footer {
+        padding: 40px 0
+    }
+
+        .footer .contacts {
+            margin-bottom: 40px;
+            order: 1
+        }
+
+        .footer .apps {
+            order: 3
+        }
+
+        .footer .social-media {
+            align-items: flex-start;
+            margin-bottom: 40px;
+            order: 2
+        }
+
+        .footer .bank-info {
+            flex-direction: column
+        }
+
+            .footer .bank-info .bank-name {
+                margin-bottom: 20px
+            }
+}
+
+@media (max-width:380px) {
+    .footer .bank-info .bank-license br {
+        display: block
+    }
+}

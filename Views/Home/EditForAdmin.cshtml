@@ -1,0 +1,8 @@
+﻿@model EditHomeViewModelForAdmin
+
+<form action="EditForAdmin" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="number" asp-for="CreditTerm" />
+    <input type="number" asp-for="YearlyPercent" />
+    <input type="submit" value="Изменить" />
+</form>

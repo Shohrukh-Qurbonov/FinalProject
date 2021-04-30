@@ -1,0 +1,7 @@
+﻿@model HomeDetailsViewModel
+
+    <form action="/Request/Create" method="post">
+        <input type="hidden"  name="HomeId" value="@Model.Id"/>
+        <input type="number"  asp-for="YearlyPercent"/>
+        <input type="number"  asp-for="CreditTerm"/>
+    </form> 
