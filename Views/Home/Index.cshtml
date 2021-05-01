@@ -7,7 +7,7 @@
 @foreach (var home in Model)
 {
 <div class="row">
-    <div class="card col-md-3 h-25">
+    <div class="card col-md-3 h-25"> 
         @if (User.IsInRole("Admin") || User.IsInRole("Company"))
         {
             <a href="~/Home/Delete?id=@home.Id">Удалить</a>
@@ -27,7 +27,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Срок кредита....................@home.CreditTerm лет</li>
             <li class="list-group-item">Адрес....................@home.Price</li>
-            <li class="list-group-item">Ежемесячно....................@(Math.Round(home.Price/(home.CreditTerm*12),2))</li>
+            <li class="list-group-item">Ежемесячно....................@(Math.Round(home.Price/(home.CreditTerm*12),2)) c.</li>
         </ul>
         <div class="card-footer">
             <a href="~/Home/HomeDetails?id=@home.Id" class="btn btn-primary">Оставить заявку</a>

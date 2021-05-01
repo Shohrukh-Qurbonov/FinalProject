@@ -1,46 +1,74 @@
 ﻿@model EditHomeViewModel
 
 <form action="Edit" method="post" enctype="multipart/form-data">
-    @foreach (var image in Model.PrevImages)
-    {
-        <img src="@image.Value" alt="Alternate Text" />
-        <a href="~/Home/DeleteImage?id=@image.Key">Удалить</a>
-    }
+    <div class="form-group">
+        @foreach (var image in Model.PrevImages)
+        {
+            <img src="@image.Value" style="width:300px;" alt="Alternate Text" />
+            <a href="~/Home/DeleteImage?id=@image.Key">Удалить</a>
+        }
+    </div>
 
     <hr />
     <input type="hidden" asp-for="Id" />
-    <input type="text" asp-for="Description" />
-    <input type="text" asp-for="Address" />
-    <input type="number" asp-for="Rooms" />
-    <input type="number" asp-for="Price" />
-    <input type="date" asp-for="BuildDate" />
-    <input type="file" asp-for="Images" multiple/>
-    <select asp-for="CategoryId">
-        @foreach (var category in Model.Categories)
-        {
-            if (category.Key == Model.CategoryId)
+    <div class="form-group">
+        <label for="exampleInputHomeDescription">Описание</label>
+        <input type="text" asp-for="Description" class="form-control" style="width:300px;" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeDescription">Адрес дома</label>
+        <input type="text" asp-for="Address" class="form-control" style="width:300px;" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeDescription">Сколько комнот</label>
+        <input type="number" asp-for="Rooms" class="form-control" style="width:300px;" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeDescription">Цена</label>
+        <input type="number" asp-for="Price" class="form-control" style="width:300px;" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeDescription">Год постройки</label>
+        <input type="date" asp-for="BuildDate" class="form-control" style="width:300px;" placeholder="Description">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeCategory">Выберите фото</label>
+        <input type="file" class="form-control-file" asp-for="Images" multiple />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeCategory">Категория</label>
+        <select asp-for="CategoryId">
+            @foreach (var category in Model.Categories)
             {
-                <option selected value="@category.Key">@category.Value</option>
+                if (category.Key == Model.CategoryId)
+                {
+                    <option selected value="@category.Key">@category.Value</option>
+                }
+                else
+                {
+                    <option value="@category.Key">@category.Value</option>
+                }
             }
-            else
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputHomeCity">Город</label>
+        <select asp-for="CityId">
+            @foreach (var city in Model.Cities)
             {
-                <option value="@category.Key">@category.Value</option>
+                if (city.Key == Model.CityId)
+                {
+                    <option selected value="@city.Key">@city.Value</option>
+                }
+                else
+                {
+                    <option value="@city.Key">@city.Value</option>
+                }
             }
-        }
-    </select>
-    <select asp-for="CityId">
-        @foreach (var city in Model.Cities)
-        {
-            if (city.Key == Model.CityId)
-            {
-                <option selected value="@city.Key">@city.Value</option>
-            }
-            else
-            {
-                <option value="@city.Key">@city.Value</option>
-            }
-        }
-    </select>
-
-    <input type="submit" value="Изменить" />
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Изменить</button>
+    </div>
 </form>
+
