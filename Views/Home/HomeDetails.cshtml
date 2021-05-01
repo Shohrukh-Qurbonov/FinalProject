@@ -1,7 +1,57 @@
 ﻿@model HomeDetailsViewModel
 
-    <form action="/Request/Create" method="post">
-        <input type="hidden"  name="HomeId" value="@Model.Id"/>
-        <input type="number"  asp-for="YearlyPercent"/>
-        <input type="number"  asp-for="CreditTerm"/>
-    </form> 
+<form action="/Request/Create" method="post">
+    <input type="hidden" name="HomeId" value="@Model.Id" />
+    <input type="hidden" name="YearlyPercent" value="@Model.YearlyPercent" />
+    <div class="form-group">
+        <label for="exampleInputYearlyPercent">Годовая ставка</label>
+        <label>@Model.YearlyPercent %</label>
+    </div>
+    <div class="form-group">
+        <label>Срок кредита</label>
+        <input type="number" name="CreditTerm" class="form-control" style="width:300px;" value="@Model.CreditTerm" />
+    </div>
+    <div class="form-group">
+        <label>Тип покупки</label>
+
+        <select name="PurchaseType">
+            <option value="Купить">Купить</option>
+            <option value="Взять кредит">Взять кредит</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Цель</label>
+
+        <select name="Aim">
+            <option value="Личное пользование">Личное пользование</option>
+            <option value="Корпоративное пользование">Корпоративное пользование</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Предоплата</label>
+        <input type="number" name="Prepayment" class="form-control" style="width:300px;" />
+    </div>
+    <div class="form-group">
+        <label>Номер телефона</label>
+        <input type="text" name="PhoneNumber" placeholder="Номер телефона" class="form-control" style="width:300px;" />
+    </div>
+    <div class="form-group">
+        <label>ФИО</label>
+        <input type="text" name="FIO" placeholder="ФИО" class="form-control" style="width:300px;" />
+    </div>
+    <div class="form-group">
+        <label>Сумма кредита</label>
+        <input type="number" name="CreditSumm" class="form-control" style="width:300px;" />
+    </div>
+    <div class="form-group">
+        <label>Тип валюты</label>
+
+        <select name="CurrencyTypeId">
+            <option value="1">Сомони</option>
+            <option value="2">USD</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Оставить заявку</button>
+    </div>
+</form>

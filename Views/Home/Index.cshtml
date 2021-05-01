@@ -1,13 +1,13 @@
 ﻿@model List<HomeViewModel>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Alif Home";
 }
 
-@foreach(var home in Model)
-            {
 
-<div class="card">
-    <div class="card-header">
+@foreach (var home in Model)
+{
+<div class="row">
+    <div class="card col-md-3 h-25">
         @if (User.IsInRole("Admin") || User.IsInRole("Company"))
         {
             <a href="~/Home/Delete?id=@home.Id">Удалить</a>
@@ -20,14 +20,18 @@
         {
             <a href="~/Home/Edit?id=@home.Id">Изменить</a>
         }
-        <img src="@home.ImagePath" alt="Alternate Text" />
-    </div>
-    <div class="card-body">
-        <p>Цена....@home.Price c.</p>
-        <p>Срок кредита....@home.CreditTerm</p>
-        <p>Адрес....@home.Price</p>
-        <p>Ежемесячно....@(Math.Round(home.Price/(home.CreditTerm*12),2))</p>
-        <a href="~/Request/Create?homeId=@home.Id">Оставить заявку</a>
+        <img class="card-img-top" src="@home.ImagePath" height="400" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Цена....................@home.Price c.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Срок кредита....................@home.CreditTerm лет</li>
+            <li class="list-group-item">Адрес....................@home.Price</li>
+            <li class="list-group-item">Ежемесячно....................@(Math.Round(home.Price/(home.CreditTerm*12),2))</li>
+        </ul>
+        <div class="card-footer">
+            <a href="~/Home/HomeDetails?id=@home.Id" class="btn btn-primary">Оставить заявку</a>
+        </div>
     </div>
 </div>
-            }
+}

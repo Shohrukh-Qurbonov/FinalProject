@@ -2,7 +2,15 @@
 
 <form action="EditForAdmin" method="post">
     <input type="hidden" asp-for="Id" />
-    <input type="number" asp-for="CreditTerm" />
-    <input type="number" asp-for="YearlyPercent" />
-    <input type="submit" value="Изменить" />
+    <div class="form-group">
+        <label for="exampleInputCreditCreditTerm">Срок Кридита</label>
+        <input type="number" asp-for="CreditTerm" class="form-control" style="width:300px;" placeholder="Credit Term">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputCreditYearlyPercent">Годовой Процент Кридита</label>
+        <input type="number" asp-for="YearlyPercent" class="form-control" style="width:300px;" placeholder="Credit Term">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Изменить</button>
+        </div>
 </form>

@@ -1,8 +1,14 @@
 ﻿@model LoginViewModel
 
 <form action="Login" method="post">
-    <input type="hidden" asp-for="ReturnUrl"  />
-    <input type="text" asp-for="Login"  />
-    <input type="password" asp-for="Password"  />
-    <input type="submit" value="Вход"  />
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="form-group">
+        <label for="exampleInputLogin">Логин</label>
+        <input type="text" asp-for="Login" class="form-control" style="width:300px;" placeholder="Login">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Пароль</label>
+        <input type="password" asp-for="Password" class="form-control" style="width:300px;" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Вход</button>
 </form>

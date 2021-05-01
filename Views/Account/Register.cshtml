@@ -2,15 +2,29 @@
 
     <div asp-validation-summary="All"></div>
     <form action="Register" method="post">
-        <input type="text" asp-for="CompanyName" />
-        <span asp-validation-for="CompanyName"></span>
-        <input type="email" asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-        <input type="text" asp-for="Login" />
-        <span asp-validation-for="Login"></span>
-        <input type="password" asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-        <input type="text" asp-for="PhoneNumber" />
-        <span asp-validation-for="PhoneNumber"></span>
-        <input type="submit" value="Регистация" />
+        <div class="form-group">
+            <label for="exampleInputCompanyName">Имя компании</label>
+            <input type="text" asp-for="CompanyName" class="form-control" style="width:300px;" placeholder="Name Company">
+            <span asp-validation-for="CompanyName"></span>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCompanyEmail">Электроная почта</label>
+            <input type="email" asp-for="Email" class="form-control" style="width:300px;" placeholder="Email-Company">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCompanyLogin">Логин</label>
+            <input type="text" asp-for="Login" class="form-control" style="width:300px;" placeholder="Company Login">
+            <span asp-validation-for="Login"></span>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCompanyPassword">Пароль</label>
+            <input type="password" asp-for="Password" class="form-control" style="width:300px;" placeholder="Password Company">
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputCompanyPhoneNumber">Номер Телефона</label>
+            <input type="text" asp-for="PhoneNumber" class="form-control" style="width:300px;" placeholder="Phone Number">
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Регистация</button>
     </form>
